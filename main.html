@@ -1,0 +1,20 @@
+<HTML>
+<?php
+$db = mysql_connect("localhost", "root", "");
+mysql_select_db("office",$db);
+$result = mysql_query("SELECT * FROM employees",$db);
+echo "<TABLE>";
+echo"<TR><TD><B>ssn</B><TD><B>Name</B><TD><B>lot</B></TR>";
+while ($myrow = mysql_fetch_array($result))
+{
+echo "<TR><TD>";
+echo $myrow["ssn"];
+echo " ";
+echo $myrow["name"];
+echo "<TD>";
+echo $myrow["lot"];
+echo "<TD>";
+}
+echo "</TABLE>";
+?>
+</HTML>
